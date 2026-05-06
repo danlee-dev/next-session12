@@ -134,7 +134,6 @@ function ReactionTest({ teamName }) {
       <p style={{ margin: '0 0 20px', color: '#4b5563', lineHeight: 1.6 }}>
         {/* Explain how the reaction test works. */}
         Start the round, wait for green, and click as fast as you can.
-      {/* Close the description paragraph. */}
       </p>
 
       {/* Render the ready screen before the round starts. */}
@@ -143,16 +142,12 @@ function ReactionTest({ teamName }) {
           <p style={{ margin: '0 0 18px', fontSize: '18px', fontWeight: 700 }}>
             {/* Ask the user to begin when ready. */}
             Click start when you are ready.
-          {/* Close the ready message paragraph. */}
           </p>
           <button type="button" style={primaryButtonStyle} onClick={startRound}>
             {/* Label the start button. */}
             Start
-          {/* Close the start button. */}
           </button>
-        {/* Close the ready screen container. */}
         </div>
-      {/* Finish the ready-screen conditional block. */}
       )}
 
       {/* Render the reaction board during waiting and go states. */}
@@ -167,9 +162,7 @@ function ReactionTest({ teamName }) {
         >
           {/* Change the board message based on the current phase. */}
           {status === 'waiting' ? 'Wait for green' : 'Click now'}
-        {/* Close the reaction board button. */}
         </button>
-      {/* Finish the board conditional block. */}
       )}
 
       {/* Render the result screen after the round ends. */}
@@ -178,27 +171,19 @@ function ReactionTest({ teamName }) {
           <p style={{ margin: 0, fontSize: '18px', fontWeight: 800 }}>
             {/* Choose between the early-click message and the measured result. */}
             {reactionMs === null
-              // Show this message when the user clicked before green.
               ? 'Too early. You clicked before the green signal.'
-              // Show the measured reaction time after a valid click.
               : `Your reaction time: ${reactionMs} ms`}
-          {/* Close the result message paragraph. */}
           </p>
           <p style={{ margin: '12px 0 20px', color: '#4b5563' }}>
             {/* Show either the first-record hint or the best score. */}
             {bestMs === null ? 'Set your first record on the next round.' : `Best record: ${bestMs} ms`}
-          {/* Close the best-score paragraph. */}
           </p>
           <button type="button" style={primaryButtonStyle} onClick={startRound}>
             {/* Label the retry button. */}
             Try again
-          {/* Close the retry button. */}
           </button>
-        {/* Close the result screen container. */}
         </div>
-      {/* Finish the result-screen conditional block. */}
       )}
-    {/* Close the outer card wrapper. */}
     </section>
   )
 // Finish the component function definition.
